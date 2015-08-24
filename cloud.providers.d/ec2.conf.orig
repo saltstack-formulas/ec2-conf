@@ -1,0 +1,112 @@
+# US East (N. Virginia)
+ec2-us-east-1:
+  # As of Salt v2015.8, ``driver`` is used instead of ``provider``
+  driver: ec2
+
+  id: 0123456789ABCDEF0123
+  key: '0123456789/ABCDEF0123456789abcdef0123456'
+
+  # If your master is not defined in ``/etc/salt/cloud``, define it here
+  minion:
+    master: saltmaster.example.com
+
+  # Make sure this key is owned by root with permissions 0400.
+  private_key: /root/mykey.pem
+  keyname: mykey
+  securitygroup: default
+
+  # Optionally configure default region
+  # Use salt-cloud --list-locations <provider> to obtain valid regions
+  #
+  location: us-east-1
+  availability_zone: us-east-1a
+
+  rename_on_destroy: True
+  delvol_on_destroy: True
+
+  # The default owner to use when querying images.
+  # Valid settings for this are:
+  # owner: amazon
+  # owner: aws-marketplace
+  # owner: self
+  # owner: <AWS account ID>
+  # owner: all
+  # Take note that ``all`` and ``aws-marketplace`` may cause Salt Cloud to
+  # appear as if it is freezing, as it tries to handle the large amount of data.
+  owner: amazon
+
+  # Specify whether to use public or private IP for deploy script.
+  #
+  # Valid options are:
+  #     private_ips - The salt-cloud command is run inside the EC2
+  #     public_ips - The salt-cloud command is run outside of EC2
+  #
+  ssh_interface: public_ips
+
+  # Set up grains information, which will be common for all nodes
+  # using this provider
+  #grains:
+  #  node_type: broker
+  #  release: 1.0.1
+
+  # Optionally configure the Windows credential validation number of
+  # retries and delay between retries.  This defaults to 10 retries
+  # with a one second delay between retries
+  #win_deploy_auth_retries: 10
+  #win_deploy_auth_retry_delay: 1
+  
+  # Configure which user to use to run the deploy script. This setting is
+  # dependent upon the AMI that is used to deploy. It is usually safer to
+  # configure this individually in a profile, than globally. Typical users
+  # are:
+  #
+  # Amazon Linux -> ec2-user
+  # RHEL         -> ec2-user
+  # CentOS       -> ec2-user
+  # Fedora       -> fedora
+  # Ubuntu       -> ubuntu
+  #
+  ssh_username: ec2-user
+
+  # Optionally add an IAM profile
+  #iam_profile: 'arn:aws:iam::123456789012:instance-profile/ExampleInstanceProfile'
+
+# US West (Oregon)
+ec2-us-west-2:
+  - extends: ec2-us-east-1:ec2
+    location: us-west-2
+
+# US West (N. California)
+ec2-us-west-1:
+  - extends: ec2-us-east-1:ec2
+    location: us-west-1
+
+# EU (Ireland)
+ec2-eu-west-1:
+  - extends: ec2-us-east-1:ec2
+    location: eu-west-1
+
+# EU (Frankfurt)
+ec2-eu-central-1:
+  - extends: ec2-us-east-1:ec2
+    location: eu-central-1
+
+# Asia Pacific (Singapore)
+ec2-ap-southeast-1:
+  - extends: ec2-us-east-1:ec2
+    location: ap-southeast-1
+
+# Asia Pacific (Sydney)
+ec2-ap-southeast-2:
+  - extends: ec2-us-east-1:ec2
+    location: ap-southeast-2
+
+# Asia Pacific (Tokyo)
+ec2-ap-northeast-1:
+  - extends: ec2-us-east-1:ec2
+    location: ap-northeast-1
+
+# South America (Sao Paulo)
+ec2-sa-east-1:
+  - extends: ec2-us-east-1:ec2
+    location: sa-east-1
