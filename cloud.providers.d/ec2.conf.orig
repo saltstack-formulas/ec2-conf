@@ -110,3 +110,8 @@ ec2-ap-northeast-1:
 ec2-sa-east-1:
   - extends: ec2-us-east-1:ec2
     location: sa-east-1
+
+# China (Beijing)
+ec2-cn-north-1:
+  - extends: ec2-us-east-1:ec2
+    location: cn-north-1
