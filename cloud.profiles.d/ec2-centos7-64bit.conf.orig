@@ -1,0 +1,54 @@
+# US East (N. Virginia)
+ec2-centos7-64bit-us-east-1:
+  provider: ec2-us-east-1
+  image: ami-96a818fe
+  size: t2.small
+  ssh_username: ec2-user
+
+# US West (Oregon)
+ec2-centos7-64bit-us-west-2:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-us-west-2
+  image: ami-c7d092f7
+
+# US West (N. California)
+ec2-centos7-64bit-us-west-1:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-us-west-1
+  image: ami-6bcfc42e
+
+# EU (Ireland)
+ec2-centos7-64bit-eu-west-1:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-eu-west-1
+  image: ami-e4ff5c93
+
+# EU (Frankfurt)
+ec2-centos7-64bit-eu-central-1:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-eu-central-1
+  image: ami-7cc4f661
+
+# Asia Pacific (Singapore)
+ec2-centos7-64bit-ap-southeast-1:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-ap-southeast-1
+  image: ami-aea582fc
+
+# Asia Pacific (Sydney)
+ec2-centos7-64bit-ap-southeast-2:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-ap-southeast-2
+  image: ami-bd523087
+
+# Asia Pacific (Tokyo)
+ec2-centos7-64bit-ap-northeast-1:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-ap-northeast-1
+  image: ami-89634988
+
+# South America (Sao Paulo)
+ec2-centos7-64bit-sa-east-1:
+  extends: ec2-centos7-64bit-us-east-1
+  provider: ec2-sa-east-1
+  image: ami-bf9520a2

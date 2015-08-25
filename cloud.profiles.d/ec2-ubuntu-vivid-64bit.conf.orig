@@ -1,0 +1,62 @@
+# All images are hvm:ebs
+
+# US East (N. Virginia)
+ec2-vivid-64bit-us-east-1:
+  provider: ec2-us-east-1
+  image: ami-8151e0ea
+  size: t2.small
+  ssh_username: ec2-user
+
+# US West (Oregon)
+ec2-vivid-64bit-us-west-2:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-us-west-2
+  image: ami-e9d2c6d9
+
+# US West (N. California)
+ec2-vivid-64bit-us-west-1:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-us-west-1
+  image: ami-0ff60f4b
+
+# EU (Ireland)
+ec2-vivid-64bit-eu-west-1:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-eu-west-1
+  image: ami-e2de8195
+
+# EU (Frankfurt)
+ec2-vivid-64bit-eu-central-1:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-eu-central-1
+  image: ami-24b3b439
+
+# Asia Pacific (Singapore)
+ec2-vivid-64bit-ap-southeast-1:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-ap-southeast-1
+  image: ami-00b6b852
+
+# Asia Pacific (Sydney)
+ec2-vivid-64bit-ap-southeast-2:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-ap-southeast-2
+  image: ami-ed7133d7
+
+# Asia Pacific (Tokyo)
+ec2-vivid-64bit-ap-northeast-1:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-ap-northeast-1
+  image: ami-5278fc52
+
+# South America (Sao Paulo)
+ec2-vivid-64bit-sa-east-1:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-sa-east-1
+  image: ami-9576fe88
+
+# China (Beijing)
+ec2-vivid-64bit-cn-north-1:
+  extends: ec2-vivid-64bit-us-east-1
+  provider: ec2-cn-north-1
+  image: ami-b6c4588f
