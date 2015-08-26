@@ -1,0 +1,8 @@
+name: ec2-conf
+os: RedHat, Debian, Ubuntu, Suse, FreeBSD
+os_family: RedHat, Debian, Suse, FreeBSD
+version: 201508
+release: 1
+minimum_version: 2015.8
+summary: Example Salt Cloud configuration for EC2
+description: This formula contains example Salt Cloud configuration for AWS EC2.
