@@ -5,7 +5,7 @@ ec2-vivid-64bit-us-east-1:
   provider: ec2-us-east-1
   image: ami-8151e0ea
   size: t2.small
-  ssh_username: ec2-user
+  ssh_username: ubuntu
 
 # US West (Oregon)
 ec2-vivid-64bit-us-west-2:
